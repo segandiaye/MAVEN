@@ -21,7 +21,7 @@
 	<!-- SCM        -->
 	<scm>
 		<url>https://github.com/segandiaye/MAVEN</url>
-		<!-- <connection>scm:git:git@github.com:segandiaye/MAVEN.git</connection> -->
+		<connection>scm:git:git@github.com:segandiaye/MAVEN.git</connection>
 		<developerConnection>scm:git:git@github.com:segandiaye/MAVEN.git</developerConnection>
 		<tag>v1.0.0</tag>
 	</scm>
