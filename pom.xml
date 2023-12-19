@@ -158,8 +158,8 @@
 				<version>1.8.1</version>
 				<configuration>
 				  <connectionType>developerConnection</connectionType>
-				  <scmVersion>master</scmVersion>
-				  <scmVersionType>branch</scmVersionType>
+				  <!-- <scmVersion>master</scmVersion>
+				  <scmVersionType>branch</scmVersionType> -->
 				</configuration>
 		        </plugin>
 			<plugin>
@@ -205,8 +205,8 @@
 		          </execution>
 		       </executions>
 		       <configuration>
-		          <serverId>nexus-releases</serverId>
-		          <nexusUrl>http://localhost:8081/</nexusUrl>
+		          <serverId>releases</serverId>
+		          <nexusUrl>http://localhost:8081/repository/releases</nexusUrl>
 		          <skipStaging>true</skipStaging>
 		       </configuration>
 		    </plugin>
