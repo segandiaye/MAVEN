@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>demo</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>demo</name>
 	<packaging>jar</packaging>
 	<description>Demo project for Spring Boot</description>
@@ -23,7 +22,8 @@
 		<url>https://github.com/segandiaye/MAVEN</url>
 		<connection>scm:git:git@github.com:segandiaye/MAVEN.git</connection>
 		<developerConnection>scm:git:git@github.com:segandiaye/MAVEN.git</developerConnection>
-		<tag>v1.0.0</tag>
+		<!-- <tag>v0.0.3</tag> -->
+		<tag>HEAD</tag>
 	</scm>
 	
 	<!-- REPOS        -->
@@ -114,6 +114,28 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+			   <groupId>org.apache.maven.plugins</groupId>
+			   <artifactId>maven-release-plugin</artifactId>
+			   <version>2.4.2</version>
+			   <configuration>
+			      <tagNameFormat>v@{project.version}</tagNameFormat>
+			      <autoVersionSubmodules>true</autoVersionSubmodules>
+			      <!-- <releaseProfiles>releases</releaseProfiles> -->
+			   </configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+				    <outputDirectory>${project.build.outputDirectory}/${project.build.finalName}</outputDirectory>
+				    <resources>
+				        <resource>
+				            <directory>src/main/resources</directory>
+				        </resource>
+				    </resources>
+				</configuration>
+			</plugin>
 		        <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-plugin</artifactId>
@@ -144,7 +166,7 @@
 					</goals>
 					<configuration>
 					    <rules>
-						<banDuplicatePomDependencyVersions/>
+						<banDuplicatePomDependencyVersions />
 					    </rules>
 					</configuration>
 				    </execution>
@@ -156,5 +178,35 @@
 			</plugin>
 		</plugins>
 	</build>
+	<!--
+	<profiles>
+	   <profile>
+	      <id>releases</id>
+	      <build>
+		 <plugins>
+		    <plugin>
+		       <groupId>org.sonatype.plugins</groupId>
+		       <artifactId>nexus-staging-maven-plugin</artifactId>
+		       <version>1.5.1</version>
+		       <executions>
+		          <execution>
+		             <id>default-deploy</id>
+		             <phase>deploy</phase>
+		             <goals>
+		                <goal>deploy</goal>
+		             </goals>
+		          </execution>
+		       </executions>
+		       <configuration>
+		          <serverId>nexus-releases</serverId>
+		          <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+		          <skipStaging>true</skipStaging>
+		       </configuration>
+		    </plugin>
+		 </plugins>
+	      </build>
+	   </profile>
+	</profiles>
+	-->
 
 </project>
