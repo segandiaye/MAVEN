@@ -20,7 +20,7 @@
 	<!-- SCM        -->
 	<scm>
 		<url>https://github.com/segandiaye/MAVEN</url>
-		<connection>scm:git:git@github.com:segandiaye/MAVEN.git</connection>
+		<!-- <connection>scm:git:git@github.com:segandiaye/MAVEN.git</connection> -->
 		<developerConnection>scm:git:git@github.com:segandiaye/MAVEN.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
@@ -153,6 +153,7 @@
 				    </resources>
 				</configuration>
 			</plugin>
+			<!-- 
 		        <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-plugin</artifactId>
@@ -161,6 +162,7 @@
 				  <connectionType>connection</connectionType>
 				</configuration>
 		        </plugin>
+			-->
 		        <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-plugin</artifactId>
