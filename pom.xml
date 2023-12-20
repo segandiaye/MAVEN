@@ -38,6 +38,10 @@
 		<updatePolicy>always</updatePolicy>
 	      </snapshots>
 	    </repository>
+	    <repository>
+	      <id>releases</id>
+	      <url>http://localhost:8081/repository/releases</url>
+	    </repository>
 	    <!--
 	    <repository>
 	      <id>snapshots</id>
