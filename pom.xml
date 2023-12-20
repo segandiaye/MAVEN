@@ -135,13 +135,14 @@
 			   <groupId>org.apache.maven.plugins</groupId>
 			   <artifactId>maven-release-plugin</artifactId>
 			   <version>2.5.3</version>
-			   <!-- <configuration>
-			      <tagNameFormat>v@{project.version}</tagNameFormat> 
+			   <configuration>
+			      <!-- <tagNameFormat>v@{project.version}</tagNameFormat> 
 			      <autoVersionSubmodules>true</autoVersionSubmodules>
 			      <releaseProfiles>releases</releaseProfiles> 
 			      <localCheckout>true</localCheckout> 
-			      <pushChanges>false</pushChanges> 
-			   </configuration> -->
+			      <pushChanges>false</pushChanges> -->
+			      <releaseProfiles>releases</releaseProfiles>
+			   </configuration> 
 			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -199,7 +200,7 @@
 			</plugin>
 		</plugins>
 	</build>
-	<!--
+	
 	<profiles>
 	   <profile>
 	      <id>releases</id>
@@ -220,7 +221,7 @@
 		       </executions>
 		       <configuration>
 		          <serverId>releases</serverId>
-		          <nexusUrl>http://localhost:8081/</nexusUrl>
+		          <nexusUrl>http://localhost:8081/repository/releases</nexusUrl>
 		          <skipStaging>true</skipStaging>
 		       </configuration>
 		    </plugin>
@@ -228,6 +229,5 @@
 	      </build>
 	   </profile>
 	</profiles>
-	-->
 
 </project>
