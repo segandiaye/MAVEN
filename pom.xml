@@ -22,7 +22,7 @@
 		<url>https://github.com/segandiaye/MAVEN</url>
 		<connection>scm:git:git@github.com:segandiaye/MAVEN.git</connection>
 		<developerConnection>scm:git:git@github.com:segandiaye/MAVEN.git</developerConnection>
-		<!-- <tag>v0.0.3</tag> -->
+		<tag>HEAD</tag>
 	</scm>
 	
 	<!-- REPOS        -->
