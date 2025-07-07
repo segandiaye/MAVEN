@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the "main" branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull request targeting the "main" branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # The operating system to use for the runner (Ubuntu in this case)
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2  # Checks out the repository's code
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2  # Setup Node.js environment (for a Node.js project)
+      with:
+        node-version: '14'  # Specify the Node.js version you want
+
+    - name: Install dependencies
+      run: npm install  # Install dependencies (adjust if using something else like yarn)
+
+    - name: Run tests
+      run: npm --version  # Check version
